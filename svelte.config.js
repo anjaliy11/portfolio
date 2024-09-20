@@ -1,11 +1,10 @@
-	import adapter from '@sveltejs/adapter-auto';
-	import Preprocess  from '@sveltejs/kit/';
-
+		import adapter from '@sveltejs/adapter-auto';
+	import  preprocess  from 'svelte-preprocess';
 	/** @type {import('@sveltejs/kit').Config} */
 	const config = {
 	kit: {
 		adapter: adapter()
 	},
-	preprocess: Preprocess()
+	preprocess: preprocess()
 	};
 	export default config;
