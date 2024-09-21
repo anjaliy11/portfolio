@@ -20,7 +20,7 @@
         <p><b class="pr-2">Email</b> anjaliyadavknp9450@gmail.com</p>
         <p>
             <b class="pr-2">GitHub</b>
-            <a href=" " target="_blank" class="text-violet-400"
+            <a href="https://github.com/anjaliy11 " target="_blank" class="text-violet-400"
                 >anjaliy11<sup class=""
                     ><span class="text-xs scale-75 pl-0.5"
                         ><i
@@ -32,7 +32,7 @@
         </p>
         <p>
             <b class="pr-2">LinkedIn</b>
-            <a href=" " target="_blank" class="text-violet-400"
+            <a href="https://linkedin.com/in/anjaliy11 " target="_blank" class="text-violet-400"
                 >anjaliy11<sup class=""
                     ><span class="text-xs scale-75 pl-0.5"
                         ><i
