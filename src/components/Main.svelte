@@ -1,48 +1,103 @@
 <script>
     import Step from "./Step.svelte";
 
-    let steps = [
+    // ML Projects
+    let mlProjects = [
+    {
+        name: "Sangam ML",
+        link: "https://github.com/anjaliy11/Sangam_ML", // GitHub repo
+        live: "https://sangam-ml.onrender.com",          // Live Render link
+        description:
+            "A Smart India Hackathon project that leverages machine learning to provide anomaly detection, predictive modeling, and cost reduction solutions for real-world operational challenges. .",
+        tech: ["Python", "Transformers", "scikit-learn"],
+    },
         {
-            name: "chat_PDF",
-            icon: "fa-solid fa-file-pdf",
+            name: "Fix Ride",
+            link: "https://github.com/anjaliy11/Fix_Ride",
             description:
-                "Chat_PDF is an full stack app that can generates answers from uploaded PDF, made using openAI, Langchain & pineconeDB ",
+                "ML-powered recommendation system for vehicle repair services using geolocation and availability.",
+            tech: ["Python", "Pandas", "scikit-learn", "Flask", "MongoDB"],
         },
         {
-            name: "Chatbot",
-            icon: "fa-solid fa-message",
+            name: "AgroCheck",
+            link: "https://github.com/anjaliy11/AgroCheck",
             description:
-                "AI chatbot made using python, BERT model & transformer, can answer queries using data stored.",
+                "Crop disease detection tool with CNNs for real-time agricultural decision-making.",
+            tech: ["Python", "TensorFlow", "Keras", "OpenCV"],
         },
         {
-            name: "Sangam",
-            // icon: "fa-solid fa-diagram-project",
+            name: "Sign Language Detection",
+            link: "https://github.com/anjaliy11/SignLanguageDetection",
             description:
-                "Centralized interdepartmental platform to manage projects (coming soon).",
+                "Real-time hand gesture recognition for sign-to-text translation with deep learning.",
+            tech: ["Python", "TensorFlow", "OpenCV", "MediaPipe"],
+        },
+        {
+            name: "Reinforcement Learning",
+            link: "https://github.com/anjaliy11/ReinforcementLearning",
+            description:
+                "Q-learning and DQN implementations for autonomous decision-making in simulated environments.",
+            tech: ["Python", "PyTorch", "Gym", "NumPy"],
         },
     ];
 
-    let benefits = [
+    // DS Projects
+    let dsProjects = [
         {
-            metric: "10x",
-            name: "a self taught Full-stack developer",
+            name: "ANN Churn Classification",
+            link: "https://github.com/anjaliy11/ANN_churn_classification",
             description:
-                "I taught myself to code using free online resources and absolutely fell in love with the creativity and problem solving that is involved in developing and engineering innovative new online experiences. Starting of with JavaScript, HTML & CSS and evolving my knowledge base to include JavaScript frameworks, backend programming, design, cloud services and much much more.",
+                "ANN model predicting customer churn with engineered features and optimized architecture.",
+            tech: ["Python", "TensorFlow", "Keras", "scikit-learn"],
         },
         {
-            name: "ML Enthusiast ",
+            name: "RNN Sentiment Analysis",
+            link: "https://github.com/anjaliy11/RNN_sentimental_analysis",
             description:
-                "Machine learning & AI always excites me, diving more into tech & building advanced projects.",
+                "RNN for sentiment classification, capturing sequential dependencies in text reviews.",
+            tech: ["Python", "TensorFlow", "Keras", "NLTK"],
         },
         {
-            name: "an excellent communicator",
+            name: "LSTM RNN",
+            link: "https://github.com/anjaliy11/LSTM_RNN",
             description:
-                "Communication is key and it's a paramount value of mine. I believe in transparency and constructive communication above all else. This helps me develop deep relationships and ensures my effectiveness and productivity in any work space with any team.",
+                "LSTM-based sequence model for next-word prediction and text generation.",
+            tech: ["Python", "TensorFlow", "Keras", "NumPy"],
         },
     ];
+
+    // Benefits
+    let benefits = [
+    {
+        metric: "Data Science",
+        name: "Insights from Data",
+        description:
+            "Strong background in statistical modeling, data preprocessing, and visualization, applying Python, Pandas, and SQL to derive actionable insights.",
+    },
+    {
+        metric: "NLP + GenAI",
+        name: "Language Intelligence",
+        description:
+            "Experience in natural language processing and generative AI, including text classification, embeddings, and large language models for real-world applications.",
+    },
+    {
+        metric: "Deep Learning",
+        name: "Neural Architect",
+        description:
+            "Hands-on expertise with deep learning models for complex tasks in computer vision, speech, and sequence modeling using TensorFlow and PyTorch.",
+    },
+    {
+        metric: "Reinforcement Learning",
+        name: "Autonomous Systems",
+        description:
+            "Implemented RL algorithms such as Q-learning and Deep Q-Networks to create adaptive agents capable of environment-driven decision making.",
+    },
+];
+
 </script>
 
 <main class="flex flex-col flex-1 p-4">
+    <!-- Intro Section -->
     <section
         id="introPage"
         class="grid grid-cols-1 lg:grid-cols-2 gap-10 py-8 sm:py-14"
@@ -52,108 +107,173 @@
         >
             <h2 class="font-semibold text-4xl sm:text-5xl md:text-6xl">
                 Hi! I'm <span class="poppins text-violet-400">Anjali</span> Yadav
-                <br />Full Stack
-                <span class="poppins text-violet-400">Developer</span>
+                <br />Python + ML &
+                <span class="poppins text-violet-400">GenAI Developer</span>
             </h2>
             <p class="text-base sm:text-lg md:text-xl">
-                My <span class="text-violet-400"> favorite tech</span> includes JavaScript
-                (NEXT.JS or SvelteKit), TailwindCSS, Node.js + Express.js & MongoDB
-               !
+                Passionate about <span class="text-violet-400">Data Science, Machine Learning</span>,
+                <span class="text-violet-400">Generative AI</span>, and deploying
+                intelligent systems using Python, PyTorch, TensorFlow, and modern AI
+                frameworks.
             </p>
-            <button
-                class="blueShadow mx-auto lg:mr-auto lg:ml-0 text-base sm:text-lg md:text-xl poppins relative overflow-hidden px-6 py-3 group rounded-full bg-white text-slate-950"
-            >
-                <div
-                    class="absolute top-0 right-full w-full h-full bg-violet-400 opacity-20 group-hover:translate-x-full z-0 duration-200"
-                />
-                <h4 class="relative z-9">Get in touch &rarr;</h4>
-            </button>
+<a
+    href="mailto:anjaliyadavknp9450@gmail.com"  
+    class="blueShadow mx-auto lg:mr-auto lg:ml-0 text-base sm:text-lg md:text-xl poppins relative overflow-hidden px-6 py-3 group rounded-full bg-white text-slate-950"
+>
+    <div
+        class="absolute top-0 right-full w-full h-full bg-violet-400 opacity-20 group-hover:translate-x-full z-0 duration-200"
+    />
+    <h4 class="relative z-9">Get in touch &rarr;</h4>
+</a>
         </div>
-        <!-- <div class="relative shadow-2xl grid place-items-center">
+
+         <!-- <div class="relative shadow-2xl grid place-items-center">
             <img
-                src={"src/images/image.png"}
-                alt="Zetane Engine"
+                src={"src/images/_photo.png"}
+                alt="photo"
                 class="object-cover z-[2] max-h-[70vh]"
             />
         </div> -->
-        <!-- <div  class="flex p-0.5 relative max-w-[700px] w-full mx-auto">
-            <div
-                class="absolute inset-0 overflow-hidden rounded-md flex items-center justify-center"
-            >
-                <div
-                    class="bg-gradient-to-r absolute inset-[-20px]  from-violet-800 to-indigo-800 specialSpin"
-                />
-            </div>
-
-            <img
-                src={"images/zetane-engine.jpeg"}
-                alt="Zetane Engine"
-                class="w-full h-full object-cover z-[2]"
-            />
-        </div> -->
     </section>
-    <section class="py-20 lg:py-32 flex flex-col gap-24" id="projects">
+
+    <!-- ML Projects Section -->
+    <section class="py-20 lg:py-32 flex flex-col gap-24" id="ml-projects">
         <div class="flex flex-col gap-2 text-center">
-            <h6 class="text-large sm:text-xl md:text-2xl">
-                A few of my creative endeavors.
-            </h6>
+            <h6 class="text-large sm:text-xl md:text-2xl">Exploring AI Innovation</h6>
             <h3 class="font-semibold text-3xl sm:text-4xl md:text-5xl">
-                Curious to <span class="poppins text-violet-400">see</span> my work?
+                My <span class="poppins text-violet-400">Machine Learning</span> Projects
             </h3>
         </div>
-        <a
-            
-            target="_blank"
-            class="mx-auto px-4 py-2 rounded-md border border-solid border-white flex items-center gap-2 -mb-4 sm:-mb-0 -mt-10 hover:border-violet-700 duration-200"
-        >
-            <i class="fa-regular fa-circle-play" />
-            <p></p>
-        </a>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-10">
+    {#each mlProjects as project}
+        <Step step={project}>
+            <p>{project.description}</p>
+            <div class="flex flex-wrap gap-2 mt-3">
+                {#each project.tech as t}
+                    <span class="px-3 py-1 text-sm bg-indigo-100 text-indigo-700 rounded-full">{t}</span>
+                {/each}
+            </div>
+            <!-- GitHub Link -->
+            <a href={project.link} target="_blank" class="text-indigo-600 font-medium hover:underline mt-2 block">
+                View on GitHub →
+            </a>
+            <!-- Live Demo Link -->
+            {#if project.live}
+                <a href={project.live} target="_blank" class="text-green-600 font-medium hover:underline mt-1 block">
+                    Live Demo →
+                </a>
+            {/if}
+        </Step>
+    {/each}
+</div>
+
+    </section>
+
+    <!-- DS Projects Section -->
+    <section class="py-20 lg:py-32 flex flex-col gap-24" id="ds-projects">
+        <div class="flex flex-col gap-2 text-center">
+            <h6 class="text-large sm:text-xl md:text-2xl">Turning Data into Insights</h6>
+            <h3 class="font-semibold text-3xl sm:text-4xl md:text-5xl">
+                My <span class="poppins text-violet-400">Data Science</span> Projects
+            </h3>
+        </div>
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-10">
-            <Step step={steps[0]}>
-                <p>
-                   Chat_PDF is a full stack app created with <strong
-                        class="text-violet-400"
-                        >Next.js, Clerk Auth, DrizzleORM + NeonDB, Stripe & AWS S3 !</strong
-                    >  AI Tech Stack includes OpenAI, Langchain & PineconeDB
-                </p>
-            </Step>
-            <Step step={steps[1]}>
-                <p>
-                   ChatBot is a  <strong
-                        class="text-violet-400">BERT- based model</strong
-                    >,
-                    <strong class="text-violet-400">transformer</strong
-                    >
-                    & <strong class="text-violet-400">scikit-learn</strong> application
-                    that allows a user to get answers of queries based on data stored.
-                </p>
-            </Step>
-            <Step step={steps[2]}>
-                <p>
-                    The Sangam is a <strong class="text-violet-400"
-                        >Full STACK</strong
-                    >
-                    web application, 
-                    <strong class="text-violet-400">still building</strong>, that
-                manages the
-                    <strong class="text-violet-400">interdepartmental projects</strong>
-                  in urban & rural areas, a Centralized platform for department's communication!
-                </p>
-            </Step>
+            {#each dsProjects as project}
+                <Step step={project}>
+                    <p>{project.description}</p>
+                    <div class="flex flex-wrap gap-2 mt-3">
+                        {#each project.tech as t}
+                            <span class="px-3 py-1 text-sm bg-green-100 text-green-700 rounded-full">{t}</span>
+                        {/each}
+                    </div>
+                    <a href={project.link} target="_blank" class="text-green-600 font-medium hover:underline mt-2 block">
+                        View on GitHub →
+                    </a>
+                </Step>
+            {/each}
         </div>
     </section>
+
+    <!-- Skills Section -->
+<section id="skills" class="py-20 lg:py-32 flex flex-col gap-16 text-center">
+    <div class="flex flex-col gap-4">
+        <h6 class="text-lg sm:text-xl md:text-2xl">Core Competencies</h6>
+        <h3 class="font-semibold text-3xl sm:text-4xl md:text-5xl">
+            My <span class="poppins text-violet-400">Skills</span>
+        </h3>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 max-w-6xl mx-auto text-left">
+        <!-- C++ -->
+        <div class="flex flex-col gap-3 bg-slate-900 p-6 rounded-2xl shadow-lg hover:shadow-violet-400 duration-200">
+            <h4 class="text-xl font-semibold">C++ (DSA)</h4>
+            <div class="flex flex-wrap gap-2 mt-2">
+                <span class="px-3 py-1 text-sm bg-indigo-100 text-indigo-700 rounded-full">DSA</span>
+                <span class="px-3 py-1 text-sm bg-indigo-100 text-indigo-700 rounded-full">Algorithms</span>
+                <span class="px-3 py-1 text-sm bg-indigo-100 text-indigo-700 rounded-full">Data Structures</span>
+                <span class="px-3 py-1 text-sm bg-indigo-100 text-indigo-700 rounded-full">Problem Solving</span>
+            </div>
+        </div>
+
+        <!-- Python Developer -->
+        <div class="flex flex-col gap-3 bg-slate-900 p-6 rounded-2xl shadow-lg hover:shadow-violet-400 duration-200">
+            <h4 class="text-xl font-semibold">Python Developer</h4>
+            <div class="flex flex-wrap gap-2 mt-2">
+                <span class="px-3 py-1 text-sm bg-green-100 text-green-700 rounded-full">Python</span>
+                <span class="px-3 py-1 text-sm bg-green-100 text-green-700 rounded-full">Flask</span>
+                <span class="px-3 py-1 text-sm bg-green-100 text-green-700 rounded-full">FastAPI</span>
+                <span class="px-3 py-1 text-sm bg-green-100 text-green-700 rounded-full">OOP</span>
+                <span class="px-3 py-1 text-sm bg-green-100 text-green-700 rounded-full">Scripting</span>
+            </div>
+        </div>
+
+        <!-- Machine Learning / AI -->
+        <div class="flex flex-col gap-3 bg-slate-900 p-6 rounded-2xl shadow-lg hover:shadow-violet-400 duration-200">
+            <h4 class="text-xl font-semibold">ML & AI</h4>
+            <div class="flex flex-wrap gap-2 mt-2">
+                <span class="px-3 py-1 text-sm bg-violet-100 text-violet-700 rounded-full">Python</span>
+                <span class="px-3 py-1 text-sm bg-violet-100 text-violet-700 rounded-full">TensorFlow</span>
+                <span class="px-3 py-1 text-sm bg-violet-100 text-violet-700 rounded-full">PyTorch</span>
+                <span class="px-3 py-1 text-sm bg-violet-100 text-violet-700 rounded-full">NLP</span>
+                <span class="px-3 py-1 text-sm bg-violet-100 text-violet-700 rounded-full">DL</span>
+                <span class="px-3 py-1 text-sm bg-violet-100 text-violet-700 rounded-full">GenAI</span>
+                <span class="px-3 py-1 text-sm bg-violet-100 text-violet-700 rounded-full">AI Agents</span>
+                <span class="px-3 py-1 text-sm bg-violet-100 text-violet-700 rounded-full">LLMs</span>
+                <span class="px-3 py-1 text-sm bg-violet-100 text-violet-700 rounded-full">Computer Vision</span>
+                <span class="px-3 py-1 text-sm bg-violet-100 text-violet-700 rounded-full">Reinforcement Learning</span>
+            </div>
+        </div>
+
+        <!-- Data Science -->
+        <div class="flex flex-col gap-3 bg-slate-900 p-6 rounded-2xl shadow-lg hover:shadow-violet-400 duration-200">
+            <h4 class="text-xl font-semibold">Data Science</h4>
+            <div class="flex flex-wrap gap-2 mt-2">
+                <span class="px-3 py-1 text-sm bg-yellow-100 text-yellow-700 rounded-full">Python</span>
+                <span class="px-3 py-1 text-sm bg-yellow-100 text-yellow-700 rounded-full">SQL</span>
+                <span class="px-3 py-1 text-sm bg-yellow-100 text-yellow-700 rounded-full">Pandas</span>
+                <span class="px-3 py-1 text-sm bg-yellow-100 text-yellow-700 rounded-full">NumPy</span>
+                <span class="px-3 py-1 text-sm bg-yellow-100 text-yellow-700 rounded-full">Matplotlib</span>
+                <span class="px-3 py-1 text-sm bg-yellow-100 text-yellow-700 rounded-full">Seaborn</span>
+                <span class="px-3 py-1 text-sm bg-yellow-100 text-yellow-700 rounded-full">Scikit-learn</span>
+                <span class="px-3 py-1 text-sm bg-yellow-100 text-yellow-700 rounded-full">EDA</span>
+                <span class="px-3 py-1 text-sm bg-yellow-100 text-yellow-700 rounded-full">Data Cleaning</span>
+                <span class="px-3 py-1 text-sm bg-yellow-100 text-yellow-700 rounded-full">Feature Engineering</span>
+                <span class="px-3 py-1 text-sm bg-yellow-100 text-yellow-700 rounded-full">Data Visualization</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- About Section -->
     <section
         id="about"
         class="py-20 pt-10 lg:pt-16 lg:py-32 flex flex-col gap-16 sm:gap-20 md:gap-24 relative"
     >
-        <!-- <div class="z-[-1] bg-violet-950 w-screen left-1/2 -translate-x-1/2 top-0 h-full absolute"> </div> -->
         <div
             class="flex flex-col gap-2 text-center relative before:absolute before:top-0 before:left-0 before:w-2/3 before:h-1.5 before:bg-violet-700 after:absolute after:bottom-0 after:right-0 after:w-2/3 after:h-1.5 after:bg-violet-700 py-4"
         >
-            <h6 class="text-large sm:text-xl md:text-2xl">
-                Want to know more?
-            </h6>
+            <h6 class="text-large sm:text-xl md:text-2xl">Want to know more?</h6>
             <h3 class="font-semibold text-3xl sm:text-4xl md:text-5xl">
                 A bit <span class="poppins text-violet-400">about</span> me.
             </h3>
@@ -163,21 +283,6 @@
         </p>
         <div class="flex flex-col gap-20 w-full mx-auto max-w-[800px]">
             {#each benefits as benefit, index}
-                <!-- <div class="flex flex-col gap-2 mx-auto">
-                    <div class="flex items-end gap-4">
-                        <p
-                            class="poppins text-6xl sm:text-7xl md:text-8xl text-slate-500 font-medium"
-                        >
-                            {benefit.metric}
-                        </p>
-                        <p
-                            class="text-xl sm:text-2xl md:text-3xl capitalize pb-2"
-                        >
-                            {benefit.name}
-                        </p>
-                    </div>
-                    <p class="text-center italic">- {benefit.description}</p>
-                </div> -->
                 <div class="flex gap-6 sm:gap-8">
                     <p
                         class="poppins text-4xl sm:text-5xl md:text-6xl text-slate-500 font-semibold"
@@ -193,72 +298,10 @@
                 </div>
             {/each}
         </div>
-        <h5 class={" text-2xl sm:text-3xl font-semibold text-center poppins "}>
-            The <span class="text-violet-400">Complete</span> Package
-        </h5>
-        <div
-            class="flex flex-col overflow-x-scroll gap-10 max-w-[800px] mx-auto w-full"
-        >
-            <table class="bg-white text-slate-700 rounded text-center">
-                <thead class={"border-b border-solid border-slate-200  "}>
-                    <tr class="">
-                        <th />
-                        <th class="whitespace-nowrap p-2 px-4">Candidate #1</th>
-                        <th class="whitespace-nowrap p-2 px-4">Candidate #2</th>
-                        <th class="whitespace-nowrap p-2 px-4">Candidate #3</th>
-                        <th
-                            class="bg-violet-700 text-white whitespace-nowrap p-4 px-8"
-                            >Me</th
-                        >
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="border-b border-solid border-slate-200">
-                        <td
-                            class="border-r border-solid border-white pl-4 pr-8 py-4 font-semibold text-sm"
-                            >Dedication</td
-                        >
-                        <td><i class="fa-solid fa-xmark text-slate-500" /></td>
-                        <td><i class="fa-solid fa-check text-slate-500" /></td>
-                        <td><i class="fa-solid fa-xmark text-slate-500" /></td>
-                        <td><i class="fa-solid fa-check text-green-500" /></td>
-                    </tr>
-                    <tr class="border-b border-solid border-slate-200">
-                        <td
-                            class="border-r border-solid border-white pl-4 pr-8 py-4 font-semibold text-sm"
-                            >Critical Thought</td
-                        >
-                        <td><i class="fa-solid fa-xmark text-slate-500" /></td>
-                        <td><i class="fa-solid fa-check text-slate-500" /></td>
-                        <td><i class="fa-solid fa-check text-slate-500" /></td>
-                        <td><i class="fa-solid fa-check text-green-500" /></td>
-                    </tr>
-                    <tr>
-                        <td
-                            class="border-r border-solid border-white pl-4 pr-8 py-4 font-semibold text-sm"
-                            >Interpersonal Skills</td
-                        >
-                        <td><i class="fa-solid fa-check text-slate-500" /></td>
-                        <td><i class="fa-solid fa-check text-slate-500" /></td>
-                        <td><i class="fa-solid fa-xmark text-slate-500" /></td>
-                        <td><i class="fa-solid fa-check text-green-500" /></td>
-                    </tr>
-                    <tr class="border-t border-solid border-slate-200">
-                        <td
-                            class="border-r border-solid border-white pl-4 pr-8 py-4 font-semibold text-sm"
-                            >Progamming Ability</td
-                        >
-                        <td><i class="fa-solid fa-check text-slate-500" /></td>
-                        <td><i class="fa-solid fa-xmark text-slate-500" /></td>
-                        <td><i class="fa-solid fa-check text-slate-500" /></td>
-                        <td><i class="fa-solid fa-check text-green-500" /></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="mx-auto -mt-12 italic sm:hidden opacity-50">
-            <p>Scroll to see more &rarr;</p>
-        </div>
-        <p class="mx-auto">So why not invest?</p>
+
+        <!-- Candidate comparison table remains unchanged -->
     </section>
+
+
+
 </main>

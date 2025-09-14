@@ -2,12 +2,15 @@
     export let y;
 
     export let tabs = [
-        { name: "Projects ", link: "#projects" },
+        { name: "ML Projects", link: "#ml-projects" },
+        { name: "DS Projects", link: "#ds-projects" },
         { name: "About me", link: "#about" },
-        // { name: "Blog", link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" },
-        // { name: "Contact", link: "" },
-        // {name: '', link: ''},
     ];
+
+    const github = "https://github.com/anjaliy11";
+    const email = "mailto:anjaliyadavknp9450@gmail.com";
+    const linkedin = "https://www.linkedin.com/in/anjaliy11";
+    const leetcode = "https://leetcode.com/anjali11y"; // LeetCode profile
 </script>
 
 <header
@@ -19,31 +22,56 @@
     <h1 class="font-medium">
         <b class="font-bold poppins">Anjali</b> <span class="">Yadav</span>
     </h1>
-    <div class="sm:flex items-center gap-4 hidden">
-        {#each tabs as tab, index}
+
+    <div class="sm:flex items-center gap-6 hidden">
+        {#each tabs as tab}
             <a
                 href={tab.link}
                 class="duration-200 hover:text-violet-400"
-                target={index === 2 ? "_blank" : ""}
             >
                 <p>{tab.name}</p>
             </a>
         {/each}
-        <!-- <button
-            class="blueShadow relative overflow-hidden px-5 py-2 group rounded-full bg-violet-600 text-white"
+
+        <!-- GitHub Link -->
+        <a
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="duration-200 hover:text-violet-400 flex items-center gap-1"
         >
-            <div
-                class="absolute top-0 right-full w-full h-full bg-violet-400 opacity-20 group-hover:translate-x-full z-0 duration-200"
-            />
-            <h4 class="relative z-9">Login</h4>
-        </button> -->
-        <button
-            class="blueShadow relative overflow-hidden px-5 py-2 group rounded-full bg-white text-slate-950"
+            <i class="fa-brands fa-github text-xl"></i>
+            <span class="hidden sm:inline">GitHub</span>
+        </a>
+
+        <!-- LinkedIn Link -->
+        <a
+            href={linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="duration-200 hover:text-violet-400 flex items-center gap-1"
         >
-            <div
-                class="absolute top-0 right-full w-full h-full bg-violet-400 opacity-20 group-hover:translate-x-full z-0 duration-200"
-            />
-            <h4 class="relative z-9">Get in touch</h4>
-        </button>
+            <i class="fa-brands fa-linkedin text-xl"></i>
+            <span class="hidden sm:inline">LinkedIn</span>
+        </a>
+
+        <!-- LeetCode Link -->
+        <a
+            href={leetcode}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="duration-200 hover:text-violet-400 flex items-center gap-1"
+        >
+            <span class="font-semibold">LeetCode</span>
+        </a>
+
+        <!-- Email Link -->
+        <a
+            href={email}
+            class="duration-200 hover:text-violet-400 flex items-center gap-1"
+        >
+            <i class="fa-solid fa-envelope text-xl"></i>
+            <span class="hidden sm:inline">Email</span>
+        </a>
     </div>
 </header>
