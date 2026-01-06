@@ -9,7 +9,7 @@
 
   <!-- Tagline -->
   <p class="inline-block px-5 py-2 mb-6 bg-violet-500/20 text-violet-200 font-semibold rounded-full text-sm sm:text-base backdrop-blur-sm">
-    Exploring Data Science • Deep Learning • GenAI • CV • NLP • RL
+    Exploring Data Science • Generative AI • Deep Learning • GenAI • CV • NLP • RL
   </p>
 
   

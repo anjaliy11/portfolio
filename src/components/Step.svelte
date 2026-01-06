@@ -3,24 +3,60 @@
 </script>
 
 <a
-    href={step.href}
+    href={step.link || step.href}
     target="_blank"
-    class="p-4 sm:p-6 md:p-8 flex flex-col gap-4 rounded-lg border border-solid border-violet-700 text-center cursor-pointer group hover:border-violet-400 duration-200"
+    rel="noopener noreferrer"
+    class="
+        group relative flex flex-col gap-4
+        p-5 sm:p-6 md:p-8
+        rounded-2xl border border-violet-800
+        bg-slate-900/40
+        text-center cursor-pointer
+        hover:border-violet-400
+        hover:shadow-lg hover:shadow-violet-900/40
+        duration-200
+    "
 >
-    <div
-        class="bg-slate-950 grid place-items-center px-4 text-5xl md:text-6xl -mt-10 sm:-mt-12 md:-mt-14 lg:-mt-16 mx-auto duration-200"
-    >
-        <i class={step.icon} />
-    </div>
-    <h3 class="font-medium text-xl sm:text-2xl md:text-3xl">
+    <!-- Icon / Logo -->
+    {#if step.icon}
+        <div class="flex justify-center">
+            <div
+                class="
+                    bg-slate-950
+                    w-14 h-14 sm:w-16 sm:h-16
+                    rounded-full
+                    grid place-items-center
+                    text-3xl sm:text-4xl
+                    text-violet-400
+                    shadow-md
+                "
+            >
+                <i class={step.icon} />
+            </div>
+        </div>
+    {/if}
+
+    <!-- Title -->
+    <h3 class="font-semibold text-lg sm:text-xl md:text-2xl">
         {step.name}
     </h3>
-    <slot />
-    <div class="flex-1 flex justify-betweeen gap-4 items-end">
-        <div
-            class="ml-auto cursor-pointer hover:text-slate-950 duration-200 relative after:absolute after:top-0 after:h-0 after:right-full after:bg-white after:w-full after:h-full after:duration-200 hover:after:translate-x-full after:z-[-1] overflow-hidden"
+
+    <!-- Content -->
+    <div class="text-sm sm:text-base text-gray-300">
+        <slot />
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-auto pt-3">
+        <span
+            class="
+                inline-flex items-center gap-1
+                text-sm font-medium text-violet-400
+                group-hover:underline
+            "
         >
-            <p class="z-4">Go to &rarr;</p>
-        </div>
+            View project
+            <span aria-hidden="true">→</span>
+        </span>
     </div>
 </a>
