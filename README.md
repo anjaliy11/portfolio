@@ -26,21 +26,24 @@ You can also double-click `index.html`. Fonts load from Google Fonts, so you nee
 
 ## Deploy
 
-### Vercel (keeps your existing project and URL)
+### Vercel (redeploy to the same domain)
 
-1. Commit and push:
+This is a static site: `index.html` is in the repository root, and there is no build step or dependency install.
+
+1. In Vercel, open the **existing project** that owns your domain. Do not create a new project if you want to keep the same domain.
+2. Under **Settings → Build and Deployment**, use:
+   - **Root Directory:** repository root (`.`)
+   - **Framework Preset:** Other
+   - **Build Command:** blank / no override
+   - **Install Command:** blank / no override
+   - **Output Directory:** `.`
+3. Save the settings, then redeploy the latest commit from the production branch as a **Production** deployment. If available, redeploy without the build cache.
+4. Once the deployment is ready, check **Settings → Domains** and confirm the domain is assigned to this project.
+
+To publish changes, commit and push to the connected production branch:
    ```bash
    git add -A && git commit -m "New portfolio" && git push
    ```
-2. Vercel redeploys on push. `vercel.json` turns off the SvelteKit build. If the build still fails, open Project Settings, Build and Deployment, set Framework Preset to Other, clear Build Command and set Output Directory to `.`.
 
-### Vercel (new project)
-
-Push this folder to a new GitHub repo, then Vercel dashboard: Add New, Project, import the repo, Deploy. Or from the terminal: `npx vercel --prod`.
-
-### Netlify or GitHub Pages
-
-- Netlify: drag this folder onto app.netlify.com/drop.
-- GitHub Pages: push to a repo, Settings, Pages, deploy from the `main` branch, root folder.
 
 
