@@ -63,8 +63,22 @@
  function burst(){if(reduce)return;glyphs.forEach(function(t,i){var s=document.createElement('span'),a=(-160+i*22)*Math.PI/180,d=90+Math.random()*60;s.className='pf';s.textContent=t;s.style.left='33%';s.style.top='88%';scene.appendChild(s);s.animate([{transform:'translate(0,0)',opacity:1},{transform:'translate('+Math.cos(a)*d+'px,'+Math.sin(a)*d+'px)',opacity:0}],{duration:1000,easing:'ease-out'}).onfinish=function(){s.remove()}})}
  setTimeout(function(){smile(src,3500)},700);setTimeout(burst,1260);
  document.documentElement.classList.add('js');
+ var revealObserver=new IntersectionObserver(function(entries,observer){
+  entries.forEach(function(entry){
+   if(!entry.isIntersecting)return;
+   entry.target.classList.add('in-view');
+   observer.unobserve(entry.target);
+  });
+ },{threshold:.12,rootMargin:'0px 0px -4% 0px'});
+ document.querySelectorAll('#work .row,.oss .grid > div,.earlier li,.skills .grid > div,.ach li,.about .cols > *').forEach(function(el){
+  el.classList.add('reveal');
+  revealObserver.observe(el);
+ });
  [].slice.call(document.querySelectorAll('#term span')).forEach(function(s,i){setTimeout(function(){s.classList.add('on')},reduce?0:600+i*420)});
- new IntersectionObserver(function(e){$('guide').classList.toggle('show',!e[0].isIntersecting)},{threshold:.15}).observe(document.querySelector('.hero'));
+ var guide=$('guide'),heroVisible=true,contactVisible=false;
+ function updateGuide(){guide.classList.toggle('show',!heroVisible&&!contactVisible)}
+ new IntersectionObserver(function(e){heroVisible=e[0].isIntersecting;updateGuide()},{threshold:.15}).observe(document.querySelector('.hero'));
+ new IntersectionObserver(function(e){contactVisible=e[0].isIntersecting;updateGuide()},{threshold:.15}).observe($('contact'));
  var io=new IntersectionObserver(function(es){es.forEach(function(e){
   if(!e.isIntersecting)return;var id=e.target.id;
   document.querySelectorAll('nav ul a').forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+id)});
