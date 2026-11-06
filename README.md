@@ -1,65 +1,46 @@
-# Personal Portfolio Website
+# Anjali Yadav, portfolio
 
-This repository contains the source code for my personal portfolio website, built to showcase my projects, technical skills, achievements, and contact information.
+A static site: plain HTML, CSS and JavaScript. No framework, no build step, no dependencies.
 
-
-
-## 🚀 Features
-
-- Responsive design optimized for all screen sizes
-- Project showcase section with GitHub integration
-- Skills and tools section categorized by domain
-- Smooth animations and transitions
-- Contact form with email forwarding
-- Lightweight and fast-loading static site
-
-## 🛠️ Tech Stack
-
-- **Frontend:** HTML, CSS, JavaScript
-- **Framework:** Svelte.js *(or React/Next.js if applicable)*
-- **Hosting:** GitHub Pages / Vercel / Netlify
-- **Icons:** Font Awesome / Heroicons
-- **Animations:** CSS animations / Framer Motion
-
-## 📁 Folder Structure
-
-
-
-# create-svelte
-
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
-
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+```
+index.html      all content (hero, work, open source, skills, achievements, certificates, about, contact)
+css/styles.css  styles
+js/main.js      turtle animation, terminal, section tips, header progress
+favicon.svg
+vercel.json     tells Vercel to serve the folder as-is
 ```
 
-## Developing
+## Run it locally
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
+Pick one:
 
 ```bash
-npm run build
+# 1. Node
+npm start                      # opens http://localhost:3000
+
+# 2. Python
+python3 -m http.server 3000    # then open http://localhost:3000
 ```
 
-You can preview the production build with `npm run preview`.
+You can also double-click `index.html`. Fonts load from Google Fonts, so you need internet.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## Deploy
+
+### Vercel (keeps your existing project and URL)
+
+1. Commit and push:
+   ```bash
+   git add -A && git commit -m "New portfolio" && git push
+   ```
+2. Vercel redeploys on push. `vercel.json` turns off the SvelteKit build. If the build still fails, open Project Settings, Build and Deployment, set Framework Preset to Other, clear Build Command and set Output Directory to `.`.
+
+### Vercel (new project)
+
+Push this folder to a new GitHub repo, then Vercel dashboard: Add New, Project, import the repo, Deploy. Or from the terminal: `npx vercel --prod`.
+
+### Netlify or GitHub Pages
+
+- Netlify: drag this folder onto app.netlify.com/drop.
+- GitHub Pages: push to a repo, Settings, Pages, deploy from the `main` branch, root folder.
+
+
